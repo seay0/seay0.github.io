@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>Proxy server &#35;1 / TIL | FairyCode</title>
+    <meta name="description" content="프록시 서버란 ?">
+    
+        <meta name="keywords" content="proxy server, DevOps BootCamp">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Proxy server &#35;1 / TIL | FairyCode">
+    <meta name="twitter:description" content="프록시 서버란 ?">
+
+    
+        <meta property="twitter:image" content="https://res.cloudinary.com/duruq2coh/image/upload/v1681104487/gitio/aws_jmgi1b.png">
+    
+    
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="http://localhost:4000/Proxy-server-1-TIL/">
+    <meta property="og:title" content="Proxy server &#35;1 / TIL | FairyCode">
+    <meta property="og:image" content="https://res.cloudinary.com/duruq2coh/image/upload/v1681104487/gitio/aws_jmgi1b.png">
+    <meta property="og:description" content="프록시 서버란 ?">
+    <meta property="og:site_name" content="FairyCode | Welcome to Seay0's Place !">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="FairyCode">
+    <meta name="msapplication-TileColor" content="#141414">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#141414">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="http://localhost:4000/Proxy-server-1-TIL/">
+    <link rel="alternate" type="application/rss+xml" title="FairyCode | Welcome to Seay0's Place !" href="http://localhost:4000/feed.xml" />
+
+    <!-- Include extra styles -->
+    
+
+    <!-- JavaScript enabled/disabled -->
+    <script>
+        document.querySelector('html').classList.remove('no-js');
+    </script>
+</head>
+
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol><symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452"><path d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"/></symbol><symbol id="icon-star" viewBox="0 0 48 48"><path fill="currentColor" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#ffffff" d="M24,11l3.898,7.898l8.703,1.301l-6.301,6.102l1.5,8.699L24,30.898L16.199,35l1.5-8.699l-6.301-6.102  l8.703-1.301L24,11z"/></symbol><symbol id="icon-read" viewBox="0 0 32 32"><path fill="currentColor" d="M29,4H3C1.343,4,0,5.343,0,7v18c0,1.657,1.343,3,3,3h10c0,0.552,0.448,1,1,1h4c0.552,0,1-0.448,1-1h10  c1.657,0,3-1.343,3-3V7C32,5.343,30.657,4,29,4z M29,5v20H18.708c-0.618,0-1.236,0.146-1.789,0.422l-0.419,0.21V5H29z M15.5,5  v20.632l-0.419-0.21C14.528,25.146,13.91,25,13.292,25H3V5H15.5z M31,25c0,1.103-0.897,2-2,2H18v1h-4v-1H3c-1.103,0-2-0.897-2-2V7  c0-0.737,0.405-1.375,1-1.722V25c0,0.552,0.448,1,1,1h10.292c0.466,0,0.925,0.108,1.342,0.317l0.919,0.46  c0.141,0.07,0.294,0.106,0.447,0.106c0.153,0,0.306-0.035,0.447-0.106l0.919-0.46C17.783,26.108,18.242,26,18.708,26H29  c0.552,0,1-0.448,1-1V5.278C30.595,5.625,31,6.263,31,7V25z M6,12.5C6,12.224,6.224,12,6.5,12h5c0.276,0,0.5,0.224,0.5,0.5  S11.776,13,11.5,13h-5C6.224,13,6,12.776,6,12.5z M6,14.5C6,14.224,6.224,14,6.5,14h5c0.276,0,0.5,0.224,0.5,0.5S11.776,15,11.5,15  h-5C6.224,15,6,14.776,6,14.5z M6,16.5C6,16.224,6.224,16,6.5,16h5c0.276,0,0.5,0.224,0.5,0.5S11.776,17,11.5,17h-5  C6.224,17,6,16.776,6,16.5z M20,12.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,13,25.5,13h-5  C20.224,13,20,12.776,20,12.5z M20,14.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,15,25.5,15h-5  C20.224,15,20,14.776,20,14.5z M20,16.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,17,25.5,17h-5  C20.224,17,20,16.776,20,16.5z"></path></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            
+                FairyCode <span class="version">v3.1.2</span>
+            
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    </a>
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2023-04-09T21:00:00+09:00">
+                            
+
+
+April 9, 2023
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>3 min to read</span>
+                </p>
+                <h1 class="post-title">Proxy server &#35;1 / TIL</h1>
+                <p class="post-subtitle">프록시 서버란 ?</p>
+
+                
+                    <img src="https://res.cloudinary.com/duruq2coh/image/upload/v1681104487/gitio/aws_jmgi1b.png" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <h1 id="proxy-server"><strong>Proxy Server</strong></h1>
+
+<ul>
+  <li>원 서버를 대리하여 통신하며 중계 역할을 한다.
+    <ul>
+      <li>캐시, 로드밸런서, 보안 등</li>
+    </ul>
+  </li>
+  <li><strong>프록시 서버를 보는 입장</strong>
+    <ul>
+      <li>클라이언트 입장 : 서버라고 인식</li>
+      <li>서버 입장 : 클라이언트라고 인식</li>
+    </ul>
+  </li>
+  <li>웹 서버에서는 클라이언트의 IP를 숨겨 프라이버시를 강화하는 데 사용할 수 있다.</li>
+  <li>서버로부터 응답을 압축하여 네트워크 대역폭을 줄이고 성능을 향상 시킨다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><img src="https://res.cloudinary.com/duruq2coh/image/upload/v1681095463/gitio/post/proxy/1_pnzeqp.png" alt="proxy" /></p>
+
+<p><br /></p>
+
+<p><strong>포워드 프록시 (forward proxy)</strong></p>
+<ul>
+  <li>일반적인 프록시로 클라이언트-서버 구조에서 <strong>클라이언트 쪽</strong>을 대리한다.</li>
+  <li>클라이언트에서 서버로 리소스를 요청할 때 직접 요청하지 않고 <strong>프록시 서버를 거쳐서 요청</strong>한다.</li>
+</ul>
+
+<p><strong>리버스 프록시 (reverse proxy)</strong></p>
+<ul>
+  <li><strong>애플리케이션 서버의 앞</strong>에 위치하여 클라이언트가 서버에 요청할 때 리버스 프록시를 호출하고,</li>
+  <li>리버스 프록시가 origin 서버로부터 응답을 전달받아 다시 클라이언트에게 전송하는 역할을 한다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="로드밸런서-load-balancer"><strong>로드밸런서 (Load Balancer)</strong></h2>
+
+<hr />
+
+<p>서비스를 제공할 수 있는 용량이 단일 서버로 충분하더라도, 서버를 한 대로 구성하면 장애가 발생했을 때 정상적인 서비스를 제공할 수 없다.</p>
+
+<p>서비스 가용성을 높이기 위해 하나의 서비스는 보통 두 대 이상의 서버로 구성하는 데 각 서버 IP주소가 다르므로 사용자가 서비스를 호출할 때 어떤 IP로 서비스를 요청할 지 결정해야 한다.</p>
+
+<p>여러 대의 서버를 사용하면 특정 서버에 장애가 발생했을 때 전체 사용자에게 영향을 미치진 않지만 부분적으로 서비스 장애가 발생하는데, <strong>로드 밸런서</strong>는 이러한 문제를 해결하기 위한 방안이다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>로드 밸런서는 사용자로부터 요청이 들어오면 받아서 사용자 별로 다수의 서버에 요청을 분산시킨다.</li>
+  <li>때문에 서버에 장애가 발생하더라도 다른 서버에서 서비스를 제공받을 수 있게 한다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>L4 로드 밸런서</strong></p>
+<ul>
+  <li>TCP, UDP 기반 / 일반적인 로드 밸런서 동작 방식</li>
+  <li>기존 로드 밸런서의 부하 분산 기능 뿐 아니라, TCP 계층의 최적화 보안 기능을 함께 제공한다.</li>
+  <li>최근에는 4계층과 7계층의 기능을 모두 지원한다.</li>
+</ul>
+
+<p><strong>L7 로드 밸런서 (ADC, Application Delivery Controller)</strong></p>
+<ul>
+  <li>프로토콜(HTTP, FTP, SMTP) 정보 기반 / 리버스 프록시 역할을 수행한다.</li>
+  <li>HTTP 헤더 정보나 URI 같은 정보를 기반으로 프로토콜을 이해한 후 부하를 분산한다.</li>
+  <li>4계층에서 7계층까지 로드 밸런싱 기능을 제공하며, 장애 극복, 리다이렉션 기능도 함께 수행한다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="캐시-cache"><strong>캐시 (Cache)</strong></h2>
+
+<hr />
+
+<p>캐시가 없을 경우 사용자는 데이터가 변경되지 않아도 계속 네트워크를 통해 데이터를 다운로드 받아야 한다. 따라서 용량이 클 수록 비용이 커지고 로딩 속도가 느려진다. </p>
+
+<ul>
+  <li><strong>캐시</strong> : 데이터나 값을 미리 복사해놓은 임시 장소</li>
+  <li>계산이나 접근 시간 없이 더 빠른 속도로 데이터에 접근할 수 있다.</li>
+  <li>브라우저에 캐시를 저장할 땐 헤더에 cache-control 속성을 통해 캐시가 유효한 시간을 지정할 수 있다.</li>
+  <li>유효한 시간을 지정하면 응답 결과를 캐시에 저장하며 지정한 시간 동안 유효하게 된다.</li>
+  <li>요청이 또 다시 오면 캐시를 우선 조회하여 캐시가 존재하거나 지정한 시간이 지나지 않아 유효하다면 해당 캐시에서 데이터를 가져온다.</li>
+  <li>유효 시간이 지나게 되면 서버에 재요청하여 다시 네트워크 다운로드가 발생하고 기존 캐시를 지우고 새 캐시로 업데이트 하며 유효 시간이 초기화된다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>프록시 캐시</strong></p>
+
+<p>평소 우리는 해외 사이트에서 불편함 없이 빠르게 정보를 받아볼 수 있다. 이러한 것들이 클라이언트와 원 서버 사이에 프록시 캐시가 도입되어 있기 때문이다.</p>
+
+<p>우리가 어떠한 자료를 찾을 때 여러 사람이 찾은 자료일수록 이미 캐시에 등록되어 있기 때문에 빠른 속도로 자료를 가져올 수 있다. 이는 캐시가 같은 국내에 있기 때문에 원서버에 접근하는 것보다 훨씬 빠르게 자료를 가져올 수 있는 것이다.</p>
+
+<p><br /></p>
+
+<h2 id="캐시-지시어-directives"><strong>캐시 지시어 (directives)</strong></h2>
+<p>캐시에 관련된 헤더 &amp; 조건부 요청 헤더</p>
+
+<hr />
+
+<h3 id="cache-control--캐시-무효화"><strong>Cache-Control : 캐시 무효화</strong></h3>
+<p>웹 브라우저가 민감한 정보까지 임의로 캐싱할 때 무효화하는 헤더</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Cache-Control: s-maxage</strong>
+    <ul>
+      <li>프록시 캐시에만 적용되는 max-age</li>
+    </ul>
+  </li>
+  <li><strong>Cache-Control: no-cache</strong>
+    <ul>
+      <li>데이터는 캐시해도 되지만, 항상 원 서버에 검증하고 사용 (이름에 주의)</li>
+    </ul>
+  </li>
+  <li><strong>Cache-Control: no-store</strong>
+    <ul>
+      <li>데이터에 민감한 정보가 있으므로 저장하면 안됨</li>
+    </ul>
+  </li>
+  <li><strong>Cache-Control: private</strong>
+    <ul>
+      <li>응답이 해당 사용자만을 위한 것, private 캐시에 저장해야 함(기본 값)</li>
+      <li>클라이언트에서 사용하고 저장하는 캐시</li>
+    </ul>
+  </li>
+  <li><strong>Cache-Control: public</strong>
+    <ul>
+      <li>응답이 public 캐시에 저장되어도 됨</li>
+      <li>프록시 서버의 캐시</li>
+    </ul>
+  </li>
+  <li><strong>Cache-Control: must-revalidte</strong>
+    <ul>
+      <li>캐시 만료 후 최초 조회 시 원 서버에 검증해야 함</li>
+      <li>원 서버 접근 실패 시 반드시 504(Gateway Timeout) 오류가 발생해야 함</li>
+      <li>must-revalidate : 캐시 유효 시간이라면 캐시를 사용함</li>
+    </ul>
+  </li>
+  <li><strong>Age: 60 (HTTP 헤더)</strong>
+    <ul>
+      <li>Origin 서버에서 응답 후 프록시 캐시 내에 머문 시간(초)</li>
+    </ul>
+  </li>
+  <li><strong>Pragma: no-cache</strong>
+    <ul>
+      <li>HTTP 1.0 하위 호환</li>
+    </ul>
+  </li>
+  <li><strong>Expires: Mon, 01 Jan 2020 00:00:00 GMT</strong>
+    <ul>
+      <li>캐시 만료일을 정확한 날짜로 지정하며, HTTP 1.0부터 사용한다.</li>
+      <li>max-age와 함께 사용하면 Expires는 무시된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>Cache-Control : no-cache, no-store, must-revalidate</strong><br />
+<strong>Pragma: no-cache</strong></p>
+
+<p><strong>확실한 캐시 무효화 응답을 하고 싶을 때 위 캐시 지시어를 모두 넣어야 한다.</strong></p>
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
+                        
+                        
+                        
+                            <li>
+                                <a href="/Linux-3-TIL/">
+                                    
+                                        <img src="https://res.cloudinary.com/duruq2coh/image/upload/v1681026269/gitio/linux_n3yuon.png">
+                                    
+                                    <h3>Linux &#35;3 / TIL</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/Proxy-server-2-TIL/">
+                                    
+                                        <img src="https://res.cloudinary.com/duruq2coh/image/upload/v1681104487/gitio/aws_jmgi1b.png">
+                                    
+                                    <h3>Proxy server &#35;2 / TIL</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/Linux-1-TIL/">
+                                    
+                                        <img src="https://res.cloudinary.com/duruq2coh/image/upload/v1681026269/gitio/linux_n3yuon.png">
+                                    
+                                    <h3>Linux &#35;1 / TIL</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="3">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/Proxy-server-2-TIL/" class="post-preview">
+        <div class="image">
+            
+                <img src="https://res.cloudinary.com/duruq2coh/image/upload/v1681104487/gitio/aws_jmgi1b.png">
+            
+        </div>
+        <h3 class="title">Proxy server &#35;2 / TIL</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;프록시 서버란 ?&quot;%20http://localhost:4000/Proxy-server-1-TIL/%20via%20&#64;&hashtags=proxy server,DevOps BootCamp"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/Proxy-server-1-TIL/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+</section>
+
+        
+
+
+        
+
+        <footer>
+    <p>
+      
+        <a href="https://github.com/seay0" title="Github">
+          <svg><use xlink:href="#icon-github"></use></svg>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/noeyaes" title="Instagram">
+          <svg><use xlink:href="#icon-instagram"></use></svg>
+        </a>
+      
+    </p>
+
+    <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+</ul>
+
+
+    <p>
+      <span>FairyCode</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="https://fairycode.tistory.com/" target="_blank" class="creator">Seay0</a>
+    </p>
+</footer>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "FairyCode",
+  "description": "Welcome to Seay0's Place !",
+  "url": "http://localhost:4000/",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/img/icons/mediumtile.png",
+      "width": "600",
+      "height": "315"
+  },
+  "sameAs": [
+    "https://github.com/seay0","https://www.instagram.com/noeyaes"
+  ]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != 'localhost') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-XXXXXXXX-X');
+  }
+</script>
+  
+
+
+<!-- Include extra scripts -->
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "Proxy server &#35;1 / TIL",
+            "headline": "프록시 서버란 ?",
+            "description": "프록시 서버란 ?",
+            "image": "https://res.cloudinary.com/duruq2coh/image/upload/v1681104487/gitio/aws_jmgi1b.png",
+            "url": "http://localhost:4000/Proxy-server-1-TIL/",
+            "articleBody": "Proxy Server
+
+
+  원 서버를 대리하여 통신하며 중계 역할을 한다.
+    
+      캐시, 로드밸런서, 보안 등
+    
+  
+  프록시 서버를 보는 입장
+    
+      클라이언트 입장 : 서버라고 인식
+      서버 입장 : 클라이언트라고 인식
+    
+  
+  웹 서버에서는 클라이언트의 IP를 숨겨 프라이버시를 강화하는 데 사용할 수 있다.
+  서버로부터 응답을 압축하여 네트워크 대역폭을 줄이고 성능을 향상 시킨다.
+
+
+
+
+
+
+
+
+포워드 프록시 (forward proxy)
+
+  일반적인 프록시로 클라이언트-서버 구조에서 클라이언트 쪽을 대리한다.
+  클라이언트에서 서버로 리소스를 요청할 때 직접 요청하지 않고 프록시 서버를 거쳐서 요청한다.
+
+
+리버스 프록시 (reverse proxy)
+
+  애플리케이션 서버의 앞에 위치하여 클라이언트가 서버에 요청할 때 리버스 프록시를 호출하고,
+  리버스 프록시가 origin 서버로부터 응답을 전달받아 다시 클라이언트에게 전송하는 역할을 한다.
+
+
+
+
+로드밸런서 (Load Balancer)
+
+
+
+서비스를 제공할 수 있는 용량이 단일 서버로 충분하더라도, 서버를 한 대로 구성하면 장애가 발생했을 때 정상적인 서비스를 제공할 수 없다.
+
+서비스 가용성을 높이기 위해 하나의 서비스는 보통 두 대 이상의 서버로 구성하는 데 각 서버 IP주소가 다르므로 사용자가 서비스를 호출할 때 어떤 IP로 서비스를 요청할 지 결정해야 한다.
+
+여러 대의 서버를 사용하면 특정 서버에 장애가 발생했을 때 전체 사용자에게 영향을 미치진 않지만 부분적으로 서비스 장애가 발생하는데, 로드 밸런서는 이러한 문제를 해결하기 위한 방안이다.
+
+
+
+
+  로드 밸런서는 사용자로부터 요청이 들어오면 받아서 사용자 별로 다수의 서버에 요청을 분산시킨다.
+  때문에 서버에 장애가 발생하더라도 다른 서버에서 서비스를 제공받을 수 있게 한다.
+
+
+
+
+L4 로드 밸런서
+
+  TCP, UDP 기반 / 일반적인 로드 밸런서 동작 방식
+  기존 로드 밸런서의 부하 분산 기능 뿐 아니라, TCP 계층의 최적화 보안 기능을 함께 제공한다.
+  최근에는 4계층과 7계층의 기능을 모두 지원한다.
+
+
+L7 로드 밸런서 (ADC, Application Delivery Controller)
+
+  프로토콜(HTTP, FTP, SMTP) 정보 기반 / 리버스 프록시 역할을 수행한다.
+  HTTP 헤더 정보나 URI 같은 정보를 기반으로 프로토콜을 이해한 후 부하를 분산한다.
+  4계층에서 7계층까지 로드 밸런싱 기능을 제공하며, 장애 극복, 리다이렉션 기능도 함께 수행한다.
+
+
+
+
+캐시 (Cache)
+
+
+
+캐시가 없을 경우 사용자는 데이터가 변경되지 않아도 계속 네트워크를 통해 데이터를 다운로드 받아야 한다. 따라서 용량이 클 수록 비용이 커지고 로딩 속도가 느려진다. 
+
+
+  캐시 : 데이터나 값을 미리 복사해놓은 임시 장소
+  계산이나 접근 시간 없이 더 빠른 속도로 데이터에 접근할 수 있다.
+  브라우저에 캐시를 저장할 땐 헤더에 cache-control 속성을 통해 캐시가 유효한 시간을 지정할 수 있다.
+  유효한 시간을 지정하면 응답 결과를 캐시에 저장하며 지정한 시간 동안 유효하게 된다.
+  요청이 또 다시 오면 캐시를 우선 조회하여 캐시가 존재하거나 지정한 시간이 지나지 않아 유효하다면 해당 캐시에서 데이터를 가져온다.
+  유효 시간이 지나게 되면 서버에 재요청하여 다시 네트워크 다운로드가 발생하고 기존 캐시를 지우고 새 캐시로 업데이트 하며 유효 시간이 초기화된다.
+
+
+
+
+프록시 캐시
+
+평소 우리는 해외 사이트에서 불편함 없이 빠르게 정보를 받아볼 수 있다. 이러한 것들이 클라이언트와 원 서버 사이에 프록시 캐시가 도입되어 있기 때문이다.
+
+우리가 어떠한 자료를 찾을 때 여러 사람이 찾은 자료일수록 이미 캐시에 등록되어 있기 때문에 빠른 속도로 자료를 가져올 수 있다. 이는 캐시가 같은 국내에 있기 때문에 원서버에 접근하는 것보다 훨씬 빠르게 자료를 가져올 수 있는 것이다.
+
+
+
+캐시 지시어 (directives)
+캐시에 관련된 헤더 &amp;amp; 조건부 요청 헤더
+
+
+
+Cache-Control : 캐시 무효화
+웹 브라우저가 민감한 정보까지 임의로 캐싱할 때 무효화하는 헤더
+
+
+
+
+  Cache-Control: s-maxage
+    
+      프록시 캐시에만 적용되는 max-age
+    
+  
+  Cache-Control: no-cache
+    
+      데이터는 캐시해도 되지만, 항상 원 서버에 검증하고 사용 (이름에 주의)
+    
+  
+  Cache-Control: no-store
+    
+      데이터에 민감한 정보가 있으므로 저장하면 안됨
+    
+  
+  Cache-Control: private
+    
+      응답이 해당 사용자만을 위한 것, private 캐시에 저장해야 함(기본 값)
+      클라이언트에서 사용하고 저장하는 캐시
+    
+  
+  Cache-Control: public
+    
+      응답이 public 캐시에 저장되어도 됨
+      프록시 서버의 캐시
+    
+  
+  Cache-Control: must-revalidte
+    
+      캐시 만료 후 최초 조회 시 원 서버에 검증해야 함
+      원 서버 접근 실패 시 반드시 504(Gateway Timeout) 오류가 발생해야 함
+      must-revalidate : 캐시 유효 시간이라면 캐시를 사용함
+    
+  
+  Age: 60 (HTTP 헤더)
+    
+      Origin 서버에서 응답 후 프록시 캐시 내에 머문 시간(초)
+    
+  
+  Pragma: no-cache
+    
+      HTTP 1.0 하위 호환
+    
+  
+  Expires: Mon, 01 Jan 2020 00:00:00 GMT
+    
+      캐시 만료일을 정확한 날짜로 지정하며, HTTP 1.0부터 사용한다.
+      max-age와 함께 사용하면 Expires는 무시된다.
+    
+  
+
+
+
+
+Cache-Control : no-cache, no-store, must-revalidate
+Pragma: no-cache
+
+확실한 캐시 무효화 응답을 하고 싶을 때 위 캐시 지시어를 모두 넣어야 한다.
+",
+            "wordcount": "686",
+            "inLanguage": "ko",
+            "dateCreated": "2023-04-09/",
+            "datePublished": "2023-04-09/",
+            "dateModified": "2023-04-09/",
+            "author": {
+                "@type": "Person",
+                "name": "Seay0",
+                
+                "image": "/assets/img/uploads/profile.png",
+                
+                "jobTitle": "The One",
+                "url": "http://localhost:4000/authors/mranderson/",
+                "sameAs": [
+                    "https://github.com/seay0","https://www.instagram.com/noeyaes"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "FairyCode",
+                "url": "http://localhost:4000/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "http://localhost:4000/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "DevOps Bootcamp",
+            "articleSection": "DevOps Bootcamp",
+            "keywords": ["proxy server","DevOps BootCamp"]
+        }
+        </script>
+    </body>
+</html>
