@@ -11,7 +11,6 @@ tags:
   - proxy server
   - DevOps BootCamp
 author: seay0
-comments: true
 ---
 
 # **Proxy Server**
@@ -167,23 +166,3 @@ Accept-Ranges: bytes
 * 명령을 처음 실행하면 서버가 응답 헤더에 X-Cache-Status: MISS 와 함께 200 OK 응답을 반환한다. 이는 서버가 요청된 리소스의 캐시된 버전을 찾지 못했기 때문에 업스트림 서버에서 검색하여 클라이언트로 전달해야 함을 나타낸다.
 * 명령을 두 번째로 실행하면 서버가 응답 헤더에 X-Cache-Status: HIT와 함께 200 OK 응답을 반환한다. 이는 서버가 요청된 리소스의 캐시된 버전을 찾아 업스트림 서버에서 검색할 필요 없이 클라이언트에 직접 제공했음을 나타낸다.
 * 명령을 세 번째로 실행하면 응답 헤더에 X-Cache-Status: EXPIRED와 함께 200 OK 응답을 반환한다. 이는 요청된 리소스의 캐시된 버전이 만료되었음을 나타낸다.('proxy_cache_path' 지시문의 'inactive=5s'에 따른 결과)
-
-<div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://seay0-github-io.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
