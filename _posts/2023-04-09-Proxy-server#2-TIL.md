@@ -4,8 +4,8 @@ layout: post
 title: Proxy server &#35;2 / TIL
 subtitle: '프록시 서버 실습'
 description: 프록시 서버 실습
-image: https://res.cloudinary.com/duruq2coh/image/upload/v1681104487/gitio/aws_jmgi1b.png
-optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1681104487/gitio/aws_jmgi1b.png
+image: https://res.cloudinary.com/duruq2coh/image/upload/v1681175914/gitio/aws_bbbsnj.png
+optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1681175914/gitio/aws_bbbsnj.png
 category: DevOps Bootcamp
 tags:
   - proxy server
