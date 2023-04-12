@@ -1,12 +1,12 @@
 ---
 date: 2023-04-11 07:26:03
 layout: post
-title: Docker? &#35;1 / TIL
-subtitle: 'Docker란 ?'
-description: Docker 에 대해 알아보기
+title: Docker? &#35;2 / TIL
+subtitle: 'Docker CLI 실습'
+description: Docker 실습
 image: https://res.cloudinary.com/duruq2coh/image/upload/v1681175914/gitio/docker_dk06pg.png
 optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1681175914/gitio/docker_dk06pg.png
-category: DevOps Bootcamp
+category: Docker
 tags:
   - Docker
   - DevOps BootCamp
@@ -102,3 +102,31 @@ docker-compose up
   
 <br>
 
+### **이미지 구분**  
+---
+
+```
+Registry_Account/Repository_Name:Tag
+```
+
+* **레지스트리 (Registry)**  
+  도커 이미지를 관리하는 공간  
+  특별히 다른 것을 지정하지 않으면, Docker Hub를 기본 레지스트리로 설정한다.  
+  ex. Docker Hub, Private Docker Hub, 회사 내부용 레지스트리 등  
+  
+* **레포지토리 (Repository)**  
+  레지스트리 내에 도커 이미지가 저장되는 공간  
+  이미지 이름이 사용되기도 한다. (github repo와 비슷함)  
+
+* **태그 (Tag)**
+  해당 이미지를 설명하는 버전 정보를 주로 입력한다.
+  특별히 다른 것을 지정하지 않으면, ```latest``` 태그를 붙인 이미지를 가져온다.
+
+```
+docker/whalesay:latest
+```
+위 문장을 해석해보면,  
+
+'Docker Hub 레지스트리에서 ```docker```라는 유저가 등록한 ```whalesay``` 이미지 혹은 레포지토리에서 ```latest``` 태그를 가진 이미지를 가져온다.'  
+
+라는 의미이다.
