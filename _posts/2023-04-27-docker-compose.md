@@ -16,6 +16,7 @@ author: seay0
 paginate: false
 ---
 > ## **1. Fastify WAS 서버 생성 / 컨테이너 화**
+
 ---
 
 먼저 fastify를 이용해 기본적인 WAS 서버 세팅을 해볼 것이다.
@@ -78,6 +79,7 @@ $ curl http://0.0.0.0:3000
 <br>
 
 > ## **2. Dockerfile 작성**
+
 ---
 
 이제 간단하게 구축된 node.js 애플리케이션인 fastify 서버를 컨테이너화 하기 위해 fastify 최상위 디렉토리에 Dockerfile과 .dockerignore를 만든다.
@@ -150,6 +152,7 @@ fastify-was   1.0       <secret^^>     27 seconds ago   187MB
 <br>
 
 > ## **3. docker-compose.yml 작성**
+
 ---
 
 먼저 Mongo 이미지를 가져온다.
@@ -194,6 +197,7 @@ mongo는 mongo compass에서도 확인할 수 있다.
 <br>
 
 > ## **4. GitHub Action을 이용한 이미지 build 자동화**
+
 ---
 
 GitHub Action을 이용하기 위해 최상위 디렉토리에 ```.github/workflows``` 폴더를 생성한다.
@@ -325,6 +329,7 @@ $ docker container rm <지울 컨테이너 ID>
 <br>
 
 > ## **5. Mongo 서버 환경 변수 설정**
+
 ---
 
 기존에 설정했던 docker-compose.yml 파일을 수정해서 나의 MongoDB에 아무나 접속할 수 없게 설정해보자.
