@@ -1,5 +1,5 @@
 ---
-date: 2023-05-03 00:00:00
+date: 2023-05-09 00:00:00
 layout: post
 title: Serverless &#35;2 / TIL
 subtitle: 'API Gateway, Lambda, DynamoDB'
