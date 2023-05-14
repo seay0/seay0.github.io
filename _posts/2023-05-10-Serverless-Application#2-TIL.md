@@ -4,8 +4,8 @@ layout: post
 title: Serverless Application &#35;2 / TIL
 subtitle: 'Serverless Application / Photobook'
 description: Serverless Application / Photobook
-image: https://res.cloudinary.com/duruq2coh/image/upload/v1683876865/gitio/dev-jeans_5_uqzbot.png
-optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1683876865/gitio/dev-jeans_5_uqzbot.png
+image: https://res.cloudinary.com/duruq2coh/image/upload/v1683161283/gitio/msa_b5yogy.png
+optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1683161283/gitio/msa_b5yogy.png
 category: Micro Services
 tags:
   - Serverless
