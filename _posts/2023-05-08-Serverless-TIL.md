@@ -1,7 +1,7 @@
 ---
 date: 2023-05-08 00:00:00
 layout: post
-title: Serverless &#35;1 / TIL
+title: Serverless / TIL
 subtitle: 'API Gateway, Lambda, DynamoDB'
 description: API Gateway, Lambda, DynamoDB
 image: https://res.cloudinary.com/duruq2coh/image/upload/v1683161283/gitio/msa_b5yogy.png
