@@ -1,15 +1,14 @@
 ---
 date: 2023-05-11 00:00:00
 layout: post
-title: Infrastructure as Code, Terraform / TIL
-subtitle: 'IaC의 의미와 필요성, Terraform'
-description: IaC의 의미와 필요성, Terraform
+title: Infrastructure as Code/ TIL
+subtitle: 'IaC의 의미와 필요성'
+description: IaC의 의미와 필요성
 image: https://res.cloudinary.com/duruq2coh/image/upload/v1683876865/gitio/dev-jeans_5_uqzbot.png
 optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1683876865/gitio/dev-jeans_5_uqzbot.png
-category: Terraform
+category: IaC
 tags:
-  - IaC
-  - Terraform
+  - Intrastructure as Code
   - DevOps BootCamp
 author: seay0
 paginate: false
