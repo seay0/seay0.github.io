@@ -4,7 +4,7 @@ layout: post
 title: Kubernetes? / TIL
 subtitle: 'Kubernetes?'
 description: Kubernetes?
-image: hhttps://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
+image: https://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
 optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
 category: Kubernetes
 tags:
