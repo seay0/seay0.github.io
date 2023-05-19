@@ -1,7 +1,7 @@
 ---
-date: 2023-05-17 00:00:00
+date: 2023-05-15 00:00:00
 layout: post
-title: Kubernetes? / TIL
+title: Kubernetes? &#35;1 / TIL
 subtitle: 'Kubernetes?'
 description: Kubernetes?
 image: https://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
