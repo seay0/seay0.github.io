@@ -2,7 +2,7 @@
 date: 2023-05-16 00:00:00
 layout: post
 title: Kubernetes? &#35;2 / TIL
-subtitle: 'Pod / Deployment '
+subtitle: 'Pod / Deployment'
 description: Pod / Deployment
 image: https://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
 optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
@@ -131,7 +131,7 @@ Deployment는 **파드를 업데이트 하기 위한 선언적 명세**이다.
 
 쿠버네티스의 핵심은 **컨테이너를 오케스트레이션** 하는 것으로, 파드 장애 시 자동 복구하거나, 복제하거나 하는 등의 일을 자동으로 처리하는 데에 있다. AWS로 따지면 ECS가 하는 일과 비슷하다. 
 
-결론적으로, 파드는 Deployment, StateFullset, Demonset을 이용해 관리하는 것이 바람직하다. 이 워크로드 리소스는 파드 템플릿을 항상 포함하고 있다.
+결론적으로, 파드는 Deployment, Stateful Set, Demonset을 이용해 관리하는 것이 바람직하다. 이 워크로드 리소스는 파드 템플릿을 항상 포함하고 있다.
 
 <br>
 
