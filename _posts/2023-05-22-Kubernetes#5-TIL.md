@@ -1,5 +1,5 @@
 ---
-date: 2023-05-19 00:00:00
+date: 2023-05-22 00:00:00
 layout: post
 title: Kubernetes? &#35;5 / TIL
 subtitle: 'Network / Ingress'
