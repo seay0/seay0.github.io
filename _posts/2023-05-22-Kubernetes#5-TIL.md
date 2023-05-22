@@ -1,7 +1,7 @@
 ---
 date: 2023-05-19 00:00:00
 layout: post
-title: Kubernetes? &#35;4 / TIL
+title: Kubernetes? &#35;5 / TIL
 subtitle: 'Network / Ingress'
 description: Network / Ingress
 image: https://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
