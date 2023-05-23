@@ -89,6 +89,7 @@ ingress-nginx-controller-6cc5ccb977-7hjfj   1/1     Running     0          61s
 
 5. 설치가 완료되면, ```minikube tunnel```로 터널을 열고 http://localhost 에 접속해보면 다음과 같이 nginx 서버가 열린 것을 확인할 수 있다.
 
+![](https://res.cloudinary.com/duruq2coh/image/upload/v1684817256/gitio/post/kubernetes/1_uztrbn.png)
 
 **Q .**  
 애플리케이션에 HTTP 500과 같은 에러가 발생한 경우, 컨테이너를 다시 실행해야 한다. HTTP 에러가 발생했다는 것을 어떻게 알 수 있고, 어떻게 해야 쿠버네티스가 에러가 발생한 컨테이너를 자동으로 재시작하게 만들 수 있을까?
