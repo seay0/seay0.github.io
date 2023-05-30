@@ -4,8 +4,8 @@ layout: post
 title: 3rd Project memoir & Yak shaving / TIL
 subtitle: 'memoir & Yak shaving'
 description: memoir & Yak shaving
-image: https://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
-optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1684374884/gitio/Kubernetes_ahpltn.png
+image: https://res.cloudinary.com/duruq2coh/image/upload/v1681175914/gitio/aws_bbbsnj.png
+optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1681175914/gitio/aws_bbbsnj.png
 category: Project
 tags:
   - Yak shaving
@@ -13,21 +13,6 @@ tags:
 author: seay0
 paginate: false
 ---
-
-### **시나리오**
----
-
-<도넛-스테이츠>는 온라인으로 도넛을 판매합니다.
-웹사이트를 통해서 주문 버튼을 누르는 것으로 구매(Sales API)가 가능합니다.
-창고에 재고가 있다면 재고가 감소하고 구매가 완료됩니다.
-유튜브스타 hoyong.LEE가 도넛-스테이츠의 도넛이 맛있다고 영상을 올렸습니다.
-그를 따르는 데브옵스 수강생들이 몰려듭니다. 주문이 급등합니다.
-창고에 재고가 없기 때문에 구매가 불가능한 경우가 발생합니다.
-창고의 도넛의 재고가 다 떨어지면 제조 공장에 알려서 다시 창고를 채우는 시스템을 구축해야 합니다.
-제조 공장인 <팩토리-스테이츠>에 주문을 요청(Leagcy Factory API)할 수 있습니다.
-주문이 요청되면 일정 시간이 지난 후 창고에 재고가 증가합니다.
-
-<br>
 
 ### **상황 / 요구 사항**  
 ---
