@@ -1,9 +1,9 @@
 ---
 date: 2023-06-02 00:00:00
 layout: post
-title: Kubenetes Cluster Monitoring / TIL
-subtitle: 'Kubenetes Cluster Monitoring'
-description: Kubenetes Cluster Monitoring
+title: Kubernetes Cluster Monitoring / TIL
+subtitle: 'Kubernetes Cluster Monitoring'
+description: Kubernetes Cluster Monitoring
 image: https://res.cloudinary.com/duruq2coh/image/upload/v1685956060/gitio/Monitoring_sfnawq.png
 optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1685956060/gitio/Monitoring_sfnawq.png
 category: Monitoring
