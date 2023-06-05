@@ -4,9 +4,9 @@ layout: post
 title: Service Monitoring / TIL
 subtitle: 'Service Monitoring'
 description: Service Monitoring
-image: https://res.cloudinary.com/duruq2coh/image/upload/v1681175914/gitio/aws_bbbsnj.png
-optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1681175914/gitio/aws_bbbsnj.png
-category: AWS
+image: https://res.cloudinary.com/duruq2coh/image/upload/v1685956060/gitio/Monitoring_sfnawq.png
+optimized_image: https://res.cloudinary.com/duruq2coh/image/upload/v1685956060/gitio/Monitoring_sfnawq.png
+category: Monitoring
 tags:
   - Service Monitoring
   - DevOps BootCamp
